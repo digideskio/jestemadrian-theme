@@ -93,28 +93,22 @@
 						
 					<?php elseif ($format == 'video') : ?>
 					
-						<?php if ($pos=strpos($post->post_content, '<!--more-->')): ?>
-						
-							<div class="featured-media">
-							
-								<?php
-										
-									// Fetch post content
-									$content = get_post_field( 'post_content', get_the_ID() );
-									
-									// Get content parts
-									$content_parts = get_extended( $content );
-									
-									// oEmbed part before <!--more--> tag
-									$embed_code = wp_oembed_get($content_parts['main']); 
-									
-									echo $embed_code;
-								
-								?>
-							
-							</div> <!-- /featured-media -->
-						
-						<?php endif; ?>
+						<?php
+                        
+                            $post_custom = get_post_custom(get_the_ID());
+                            $video_url = isset($post_custom['video_url'][0]) ? $post_custom['video_url'][0] : null;
+                            
+                        ?>
+
+                        <?php if ($video_url): ?>
+
+                            <div class="featured-media">
+                            
+                                <?php echo wp_oembed_get($video_url); ?>
+                            
+                            </div> <!-- /featured-media -->
+
+                        <?php endif; ?>
 				
 					<?php elseif ( has_post_thumbnail() ) : ?>
 					
@@ -139,7 +133,7 @@
 					<div class="post-content">
 						
 						<?php 
-							if ($format == 'link' || $format == 'quote' || $format == 'video') { 
+							if ($format == 'link' || $format == 'quote') { 
 								$content = $content_parts['extended'];
 								$content = apply_filters('the_content', $content);
 								echo $content;
