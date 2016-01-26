@@ -565,9 +565,13 @@ body a {
 .posts { overflow: visible !important; }
 
 .post-container {
-	width: 33.3%;
-	padding: 0 1.5% 4.5% 1.5%;
+	width: 50%;
+	padding: 0 3% 4.5% 0;
 }
+
+    .post-container:nth-child(even) {
+        padding-right: 0;
+    }
 
 .hentry,
 .post {
@@ -2407,7 +2411,15 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 
 
 /* -------------------------------------------------------------------------------- */
-/*	13. Responsive
+/*	13. Home
+/* -------------------------------------------------------------------------------- */
+
+body.home .content.fleft { width: 67.5%; }
+body.home .content.fleft .section-inner.content { width: 100%; max-width: 100%; }
+
+
+/* -------------------------------------------------------------------------------- */
+/*	14. Responsive
 /* -------------------------------------------------------------------------------- */
 
 
@@ -2503,6 +2515,8 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 	/* structure */
 	
 	body.single .content { width: 100%; float: none; }
+    
+    body.home .content.fleft { width: 100%; float: none; }
 	
 	.sidebar { display: none; }
 	
@@ -2563,6 +2577,8 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 	
 	.section-inner { max-width: 92%; }
 	.section-inner.content { max-width: 97%; }
+    
+    body.home .content.fleft { width: 100%; float: none; }
 	
 	/* header */
 	
