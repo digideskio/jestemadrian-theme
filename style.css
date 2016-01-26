@@ -566,12 +566,8 @@ body a {
 
 .post-container {
 	width: 50%;
-	padding: 0 3% 4.5% 0;
+	padding: 0 1.5% 4.5% 1.5%;
 }
-
-    .post-container:nth-child(even) {
-        padding-right: 0;
-    }
 
 .hentry,
 .post {
@@ -2417,9 +2413,15 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 body.home .content.fleft { width: 67.5%; }
 body.home .content.fleft .section-inner.content { width: 100%; max-width: 100%; }
 
+/* -------------------------------------------------------------------------------- */
+/*	14. Home
+/* -------------------------------------------------------------------------------- */
+
+body.archive .content.fleft { width: 67.5%; }
+body.archive .content.fleft .section-inner.content { width: 100%; max-width: 100%; }
 
 /* -------------------------------------------------------------------------------- */
-/*	14. Responsive
+/*	15. Responsive
 /* -------------------------------------------------------------------------------- */
 
 
@@ -2517,6 +2519,8 @@ body.home .content.fleft .section-inner.content { width: 100%; max-width: 100%; 
 	body.single .content { width: 100%; float: none; }
     
     body.home .content.fleft { width: 100%; float: none; }
+    
+    body.archive .content.fleft { width: 100%; float: none; }
 	
 	.sidebar { display: none; }
 	
@@ -2579,6 +2583,8 @@ body.home .content.fleft .section-inner.content { width: 100%; max-width: 100%; 
 	.section-inner.content { max-width: 97%; }
     
     body.home .content.fleft { width: 100%; float: none; }
+    
+    body.archive .content.fleft { width: 100%; float: none; }
 	
 	/* header */
 	
